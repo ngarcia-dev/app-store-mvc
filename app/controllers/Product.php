@@ -14,7 +14,8 @@ class ProductController
   public function index()
   {
     $products = $this->productModel->getAllProducts();
-    require 'view/product/index.php';
+    $view = 'view/product/index.php';
+    include 'view/layout.php';
   }
 
   public function create()

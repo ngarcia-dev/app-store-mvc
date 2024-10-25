@@ -1,9 +1,9 @@
 <?php
 
-require_once 'controllers/ProductController.php';
+require_once __DIR__ . '/../controllers/Product.php';
 
 // Crear la conexión a la base de datos (suponiendo que tienes un archivo de configuración de DB)
-require_once 'config/database.php';
+require_once __DIR__ . '/database.php';
 $db = new Database(); // Conectar a la base de datos
 $db = $db->connect(); // Método que devuelve la conexión
 
