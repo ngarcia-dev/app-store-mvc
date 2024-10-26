@@ -29,6 +29,11 @@ elseif ($requestUri === '/products/store' && $requestMethod === 'POST') {
   $productController->store();
 }
 
+// Ruta para mostrar los detalles de un producto
+elseif (preg_match('/^\/products\/show\/(\d+)$/', $requestUri, $matches) && $requestMethod === 'GET') {
+  $productController->show($matches[1]);
+}
+
 // Ruta para mostrar el formulario de edición de un producto
 elseif (preg_match('/^\/products\/edit\/(\d+)$/', $requestUri, $matches) && $requestMethod === 'GET') {
   $productController->edit($matches[1]);
