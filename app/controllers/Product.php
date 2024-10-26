@@ -14,13 +14,13 @@ class ProductController
   public function index()
   {
     $products = $this->productModel->getAllProducts();
-    $view = 'view/product/index.php';
-    include 'view/layout.php';
+    $view = '/../views/product/index.php';
+    include __DIR__ . '/../views/layout.php';
   }
 
   public function create()
   {
-    require 'view/product/create.php';
+    require __DIR__ . '/../views/product/create.php';
   }
 
   public function store()
@@ -38,10 +38,16 @@ class ProductController
     }
   }
 
+  public function show($id)
+  {
+    $product = $this->productModel->getProductById($id);
+    require __DIR__ . '/../views/product/show.php';
+  }
+
   public function edit($id)
   {
     $product = $this->productModel->getProductById($id);
-    require 'view/product/edit.php';
+    require __DIR__ . '/../views/product/edit.php';
   }
 
   public function update($id)
