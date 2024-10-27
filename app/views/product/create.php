@@ -20,4 +20,5 @@
   </select>
 
   <button type="submit">Guardar</button>
+  <a href="/products">Volver</a>
 </form>
